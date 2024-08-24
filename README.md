@@ -7,26 +7,28 @@ This project aims to automate the deployment of infrastructure on Amazon Web Ser
 ## Features ⬇️
 
 - **Networking Setup:**
-  - Creation of VPC with public and private subnets
-  - Configuration of internet gateway and NAT gateway
-  - Establishment of route tables for public and private subnets
+  - Creation of VPC with public and private subnets.
+  - Configuration of internet gateway and NAT gateway.
+  - Establishment of route tables for public and private subnets.
 - **Compute Resources:**
-  - Deployment of EC2 instances for bastion and application servers
-  - Implementation of security groups for SSH access and application-specific ports
-  - Utilization of remote state and locking mechanism for enhanced collaboration and security
-- **Workspace Management:**
-  - Provisioning of separate workspaces for development (dev) and production (prod) environments
-  - Definition of variable files (`.tfvars`) for each environment to manage configurations effectively
+  - Deployment of EC2 instances: a Bastion host in the public subnet and an application server in the private subnet.
+  - Implementation of security groups for SSH access and application-specific ports.
+  - Utilization of remote state and locking mechanism for enhanced collaboration and security.
+- **State Management and Environment Workspacest:**
+  - S3 Bucket for storing Terraform state files, ensuring a centralized and versioned state.
+  - DynamoDB Table for state locking, preventing concurrent state modifications and ensuring safe collaboration.
+  - Provisioning of separate workspaces for development (dev) and production (prod) environments.
+  - Definition of variable files (`.tfvars`) for each environment to manage configurations effectively.
 - **Infrastructure Modularity:**
-  - Modularization of network resources into a separate module for better organization and reusability
+  - Modularization of network resources into a separate module for better organization and reusability.
 - **Email Notification System:**
-  - Verification of email in AWS SES service for sending notifications
-  - Creation of a Lambda function to send email alerts triggered by state file changes
+  - Verification of email in AWS SES service for sending notifications.
+  - Creation of a Lambda function to send email alerts triggered by state file changes.
 - **Database and Caching:**
-  - Deployment of RDS (Relational Database Service) for database management
-  - Configuration of ElastiCache for caching data to improve application performance
+  - Deployment of RDS (Relational Database Service) for database management.
+  - Configuration of ElastiCache for caching data to improve application performance.
 - **Secrets Management:**
-  - Secure storage of SSH private key using AWS Secrets Manager
+  - Secure storage of SSH private key using AWS Secrets Manager.
 
 ## Deployment Instructions ⬇️
 

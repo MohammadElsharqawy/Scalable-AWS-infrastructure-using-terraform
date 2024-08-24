@@ -3,6 +3,6 @@ terraform {
     bucket         = "elsharq-terraform-bucket"
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "dynamo-look-table"
+    dynamodb_table = "dynamo-lock-table"
   }
 }
